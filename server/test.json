@@ -4,6 +4,7 @@
     "console": false,
     "log": false,
     "debug": true,
+    "workDir": "./tmp",
     "masterBus": {
         "logLevel": "error",
         "socket": "dfsp-directory"
