@@ -4,14 +4,16 @@
   "description": "DFSP directory service",
   "main": "index.js",
   "scripts": {
-    "lint": "ut-lint .",
-    "release": "ut-release",
     "changelog": "ut-changelog",
     "check": "ut-check",
     "cover": "ut-cover",
     "gitlab": "ut-gitlab",
     "jenkins": "ut-jenkins",
+    "lint": "ut-lint .",
     "lint-js": "ut-lint-js .",
+    "pm2": "pm2 start pm2.json",
+    "pm2-show": "pm2 show",
+    "pm2-stop": "pm2 stop pm2.json",
     "postpublish": "ut-postpublish",
     "postversion": "ut-postversion",
     "precommit": "ut-precommit",
@@ -19,12 +21,10 @@
     "prepush": "ut-prepush",
     "pretest": "ut-pretest",
     "preversion": "ut-preversion",
+    "release": "ut-release",
     "start": "node .",
     "test": "ut-test",
-    "version": "ut-version",
-    "pm2": "pm2 start pm2.json",
-    "pm2-show": "pm2 show",
-    "pm2-stop": "pm2 stop pm2.json"
+    "version": "ut-version"
   },
   "dependencies": {
     "joi":"9.0.4",

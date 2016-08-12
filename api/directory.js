@@ -1,6 +1,6 @@
 var joi = require('joi');
 module.exports = {
-    'name.get': {
+    'user.get': {
         // description: 'some description of the method',
         // notes: ['some notes about the method'],
         // tags: ['tag1', 'tag2'],

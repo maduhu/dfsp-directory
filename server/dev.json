@@ -1,5 +1,5 @@
 {
-    "implementation": "mfsp-directory",
+    "implementation": "dfsp-directory",
     "console": {
         "server": {
             "host": "0.0.0.0",
@@ -22,10 +22,9 @@
     },
     "masterBus": {
         "logLevel": "debug",
-        "socket": "mfsp-directory"
+        "socket": "dfsp-directory"
     },
     "workerBus": {
         "logLevel": "debug"
     }
-
 }
