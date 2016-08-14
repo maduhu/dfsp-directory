@@ -4,18 +4,30 @@ var joi = require('joi')
 test({
   type: 'integration',
   name: 'Directory service',
+  client: require('../client'),
+  clientConfig: require('../client/test'),
   steps: function (test, bus, run) {
     run(test, bus, [{
       method: 'directory.user.get',
       params: {
         URI: '00359######'
       },
+      name: 'Get existing user',
       result: (result, assert) => {
         assert.equals(joi.validate(result, {
           name: joi.string().valid('### #### ######'),
           account: joi.string().valid('https://####.###/######'),
           currency: joi.string().valid('USD')
         }).error, null, 'return user name, account and currency')
+      }
+    }, {
+      method: 'directory.user.get',
+      params: {
+        URI: 'nonexisting'
+      },
+      name: 'Get non existing user',
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, {}).error, null, 'return empty object')
       }
     }])
   }
