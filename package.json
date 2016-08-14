@@ -38,7 +38,7 @@
     "blue-tape":"0.2.0",
     "tap-xunit": "1.4.0",
     "ut-port-performance": "~5.4.5",
-    "ut-tools": "^5.6.2"
+    "ut-tools": "^5.7.1"
   },
   "repository": {
     "type": "git",
@@ -49,5 +49,5 @@
     "npm": ">=3.10.6"
   },
   "author": "Kalin Krustev <kalin.krustev@softwaregroup-bg.com>",
-  "license": "Apache-2.0"
+  "license": "UNLICENSED"
 }

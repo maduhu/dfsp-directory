@@ -1,7 +1,7 @@
 module.exports = {
-    check: function() {
-        return {
-            'permission.get': ['*']
-        };
+  check: function () {
+    return {
+      'permission.get': ['*']
     }
-};
+  }
+}
