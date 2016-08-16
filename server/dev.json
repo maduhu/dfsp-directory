@@ -26,5 +26,15 @@
   },
   "workerBus": {
     "logLevel": "debug"
-  }
+  },
+  "db": {
+    "logLevel": "trace",
+    "db": {
+      "host": "cisco"
+    },
+    "permission": {
+      "requireSession": true
+    }
+  },
+  "debug": true
 }

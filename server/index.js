@@ -1,13 +1,15 @@
 module.exports = {
   ports: [
+    require('../db'),
     require('../httpserver'),
     require('../script')
   ],
   modules: {
-    identity: require('../service/identity'),
-    directory: require('../service/directory')
+    'db/directory': require('../service/directory/db'),
+    directory: require('../service/directory'),
+    identity: require('../service/identity')
   },
   validations: {
-    directory: require('../api/directory')
+    directory: require('../service/directory/api')
   }
 }

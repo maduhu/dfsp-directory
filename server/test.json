@@ -18,5 +18,6 @@
       "host": "influxdb",
       "port": 4444
     }
-  }
+  },
+  "db": false
 }

@@ -26,8 +26,14 @@ test({
         URI: 'nonexisting'
       },
       name: 'Get non existing user',
-      result: (result, assert) => {
-        assert.equals(joi.validate(result, {}).error, null, 'return empty object')
+      error: (result, assert) => {
+        assert.equals(joi.validate(result, {
+          code: joi.number(),
+          errorPrint: joi.string(),
+          message: joi.string(),
+          print: joi.string(),
+          type: joi.valid('PortRPC.Generic')
+        }).error, null, 'return empty object')
       }
     }])
   }
