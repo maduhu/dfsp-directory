@@ -19,5 +19,8 @@
       "port": 4444
     }
   },
+  "script": {
+    "mock": true
+  },
   "db": false
 }

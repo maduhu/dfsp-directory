@@ -8,12 +8,16 @@ const users = {
 }
 
 module.exports = {
-  'user.get': function (params) {
-    var result = users[params && params.URI]
-    if (result) {
-      return result
+  'user.get': function (params, $meta) {
+    if (this.config.mock) {
+      var result = users[params && params.URI]
+      if (result) {
+        return result
+      } else {
+        throw error.userNotFound()
+      }
     } else {
-      throw error.userNotFound()
+      return this.bus.importMethod('db/directory.user.get')({userNumber: params.URI}, $meta)
     }
   }
 }
