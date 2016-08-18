@@ -2,6 +2,7 @@ module.exports = {
   ports: [
     require('../db'),
     require('../httpserver'),
+    require('../rest'),
     require('../script')
   ],
   modules: {
