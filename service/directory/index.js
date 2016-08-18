@@ -1,10 +1,11 @@
 var error = require('./error')
+const user = {
+  name: '### #### ######',
+  account: 'https://####.###/######',
+  currency: 'USD'
+}
 const users = {
-  'id:00359######': {
-    name: '### #### ######',
-    account: 'https://####.###/######',
-    currency: 'USD'
-  }
+  'id:00359######': user
 }
 
 module.exports = {
@@ -21,6 +22,17 @@ module.exports = {
         return this.bus.importMethod('db/directory.user.get')({
           userNumber: params.URI.substr(3)
         }, $meta)
+        .then((u) => {
+          if (u && u.length) {
+            return {
+              name: u[0].name,
+              account: user.account,
+              currency: user.currency
+            }
+          } else {
+            throw error.userNotFound()
+          }
+        })
       }
     } else {
       return this.bus.importMethod('ist/directory.user.get')({

@@ -31,7 +31,7 @@
     "ut-bus": "~5.4.7",
     "ut-error": "~5.3.14",
     "ut-port-http":"~6.1.4",
-    "ut-port-httpserver":"~6.2.3",
+    "ut-port-httpserver":"~6.2.4",
     "ut-port-script":"~5.4.3",
     "ut-port-postgres":"~5.4.0",
     "ut-run":"~6.0.2",

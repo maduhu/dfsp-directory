@@ -36,5 +36,8 @@
       "requireSession": true
     }
   },
+  "script": {
+    "#mock": true
+  },
   "debug": true
 }
