@@ -30,6 +30,7 @@
     "joi":"9.0.4",
     "ut-bus": "~5.4.7",
     "ut-error": "~5.3.14",
+    "ut-port-http":"~6.1.4",
     "ut-port-httpserver":"~6.2.3",
     "ut-port-script":"~5.4.3",
     "ut-port-postgres":"~5.4.0",
