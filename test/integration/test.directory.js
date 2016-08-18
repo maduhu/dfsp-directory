@@ -1,5 +1,6 @@
 var test = require('ut-run/test')
 var joi = require('joi')
+const URI = '00359######'
 
 test({
   type: 'integration',
@@ -8,32 +9,76 @@ test({
   clientConfig: require('../client/test'),
   steps: function (test, bus, run) {
     run(test, bus, [{
+      name: 'Get existing user',
       method: 'directory.user.get',
       params: {
-        URI: '00359######'
+        URI: URI
       },
-      name: 'Get existing user',
       result: (result, assert) => {
         assert.equals(joi.validate(result, {
-          name: joi.string().valid('### #### ######'),
-          account: joi.string().valid('https://####.###/######'),
-          currency: joi.string().valid('USD')
+          name: joi.string().valid('### #### ######').required(),
+          account: joi.string().valid('https://####.###/######').required(),
+          currency: joi.string().valid('USD').required()
         }).error, null, 'return user name, account and currency')
       }
     }, {
+      name: 'Get non existing user',
       method: 'directory.user.get',
       params: {
         URI: 'nonexisting'
       },
-      name: 'Get non existing user',
-      error: (result, assert) => {
-        assert.equals(joi.validate(result, {
-          code: joi.number(),
+      error: (error, assert) => {
+        assert.equals(joi.validate(error, joi.object().keys({
+          code: joi.number().required(),
           errorPrint: joi.string(),
-          message: joi.string(),
-          print: joi.string(),
-          type: joi.valid('PortRPC.Generic')
-        }).error, null, 'return empty object')
+          message: joi.string().required(),
+          print: joi.string().required(),
+          type: joi.valid('PortRPC.Generic').required()
+        }).required()).error, null, 'return code and type of the failure')
+      }
+    }, {
+      name: 'Get without user',
+      method: 'directory.user.get',
+      params: {
+      },
+      error: (error, assert) => {
+        assert.equals(joi.validate(error, joi.object().keys({
+          code: joi.number().required(),
+          errorPrint: joi.string().required(),
+          message: joi.string().required(),
+          print: joi.string().required(),
+          type: joi.valid('PortRPC.Generic').required()
+        }).required()).error, null, 'return code and type of the failure')
+      }
+    }, {
+      name: 'Get with null user',
+      method: 'directory.user.get',
+      params: {
+        URI: null
+      },
+      error: (error, assert) => {
+        assert.equals(joi.validate(error, joi.object().keys({
+          code: joi.number().required(),
+          errorPrint: joi.string().required(),
+          message: joi.string().required(),
+          print: joi.string().required(),
+          type: joi.valid('PortRPC.Generic').required()
+        }).required()).error, null, 'return code and type of the failure')
+      }
+    }, {
+      name: 'Get with id:uri',
+      method: 'directory.user.get',
+      params: {
+        URI: 'id' + URI
+      },
+      error: (error, assert) => {
+        assert.equals(joi.validate(error, joi.object().keys({
+          code: joi.number().required(),
+          errorPrint: joi.string().required(),
+          message: joi.string().required(),
+          print: joi.string().required(),
+          type: joi.valid('PortRPC.Generic').required()
+        }).required()).error, null, 'return code and type of the failure')
       }
     }])
   }
