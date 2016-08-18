@@ -14,7 +14,7 @@
     "jsonrpc": {
         "logLevel": "error",
         "uri": "/rpc",
-        "url": "http://127.0.0.1:8003",
+        "url": "http://127.0.0.1:8011",
         "namespace": ["directory"],
         "method": "post"
     },

@@ -3,7 +3,7 @@ var errors = require('ut-error')
 module.exports = {
   id: 'ist',
   createPort: require('ut-port-http'),
-  url: 'http://localhost:8003/rpc/',
+  url: 'http://localhost:8011/rpc/',
   namespace: ['ist/directory'],
   raw: {
     json: true,
