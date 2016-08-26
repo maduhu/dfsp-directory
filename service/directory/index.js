@@ -2,7 +2,7 @@ var error = require('./error')
 const user = {
   name: '### #### ######',
   account: 'https://####.###/######',
-  currency: 'USD'
+  currency: 'TZS'
 }
 const users = {
   'id:00359######': user

@@ -18,7 +18,7 @@ test({
         assert.equals(joi.validate(result, {
           name: joi.string().valid('### #### ######').required(),
           account: joi.string().valid('https://####.###/######').required(),
-          currency: joi.string().valid('USD').required()
+          currency: joi.string().valid('TZS').required()
         }).error, null, 'return user name, account and currency')
       }
     }, {
