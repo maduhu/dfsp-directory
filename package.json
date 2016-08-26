@@ -30,17 +30,17 @@
     "joi":"9.0.4",
     "ut-bus": "~5.4.7",
     "ut-error": "~5.3.14",
-    "ut-port-http":"~6.1.4",
-    "ut-port-httpserver":"~6.2.4",
+    "ut-port-http":"~6.2.0",
+    "ut-port-httpserver":"~6.2.6",
     "ut-port-script":"~5.4.3",
-    "ut-port-postgres":"~5.4.0",
-    "ut-run":"~6.0.2",
+    "ut-port-postgres":"~5.6.0",
+    "ut-run":"~6.1.0",
     "pm2":"1.1.3"
   },
   "devDependencies": {
     "blue-tape":"0.2.0",
     "tap-xunit": "1.4.0",
-    "ut-port-jsonrpc": "~5.4.1",
+    "ut-port-jsonrpc": "~5.5.0",
     "ut-port-performance": "~5.4.5",
     "ut-port-console": "~6.1.4",
     "ut-tools": "^5.8.1"
