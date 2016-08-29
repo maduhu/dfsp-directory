@@ -32,8 +32,7 @@ test({
           code: joi.number().required(),
           errorPrint: joi.string(),
           message: joi.string().required(),
-          print: joi.string().required(),
-          type: joi.valid('PortRPC.Generic').required()
+          type: joi.valid('Directory.UserNotFound').required()
         }).required()).error, null, 'return code and type of the failure')
       }
     }, {
@@ -46,8 +45,7 @@ test({
           code: joi.number().required(),
           errorPrint: joi.string().required(),
           message: joi.string().required(),
-          print: joi.string().required(),
-          type: joi.valid('PortRPC.Generic').required()
+          type: joi.valid('Directory.UserNotFound').required()
         }).required()).error, null, 'return code and type of the failure')
       }
     }, {
@@ -61,8 +59,7 @@ test({
           code: joi.number().required(),
           errorPrint: joi.string().required(),
           message: joi.string().required(),
-          print: joi.string().required(),
-          type: joi.valid('PortRPC.Generic').required()
+          type: joi.valid('Directory.UserNotFound').required()
         }).required()).error, null, 'return code and type of the failure')
       }
     }, {
@@ -76,8 +73,7 @@ test({
           code: joi.number().required(),
           errorPrint: joi.string().required(),
           message: joi.string().required(),
-          print: joi.string().required(),
-          type: joi.valid('PortRPC.Generic').required()
+          type: joi.valid('Directory.UserNotFound').required()
         }).required()).error, null, 'return code and type of the failure')
       }
     }])
