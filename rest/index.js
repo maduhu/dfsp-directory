@@ -1,9 +1,9 @@
-var errors = require('ut-error')
+var errors = require('./errors')
 
 module.exports = {
   id: 'ist',
   createPort: require('ut-port-http'),
-  url: 'http://localhost:8011/rpc/',
+  url: 'http://interop-dfsp-services-dev.us-west-2.elasticbeanstalk.com:8081/directory/v1/user',
   namespace: ['ist/directory'],
   raw: {
     json: true,
@@ -14,28 +14,48 @@ module.exports = {
   requestTimeout: 300000,
   method: 'post',
   'directory.user.get.request.send': function (msg) {
+    if (msg.URI === '00359######') { // keep the mock
+      return {
+        url: 'http://localhost:8011/rpc/',
+        uri: 'directory.user.get',
+        payload: {URI: 'id:' + msg.URI}
+      }
+    }
     return {
-      uri: 'directory.user.get',
-      payload: {URI: 'id:' + msg.URI}
+      uri: '/get',
+      payload: {
+        id: '1',
+        jsonrpc: '2.0',
+        method: 'directory.user.get',
+        params: {
+          userURI: msg.URI
+        }
+      }
     }
   },
-  'directory.user.get.response.receive': function (msg) {
-    var error
-    if (msg && msg.payload && msg.payload.error) {
-      var type = errors.get(msg.payload.error.type)
-      if (type) {
-        error = type(msg.payload.error)
-      } else {
-        error = new Error('Unknown error')
-        error.type = 'directory.unknown'
+  'directory.user.add.request.send': function (msg) {
+    return {
+      uri: '/add',
+      payload: {
+        id: '1',
+        jsonrpc: '2.0',
+        method: 'directory.user.add',
+        params: msg
       }
-      throw error
-    } else if (msg && msg.payload && msg.payload.result) {
-      return msg.payload.result
-    } else {
-      error = new Error('Invalid response from central directory')
-      error.type = 'directory.invalid'
-      throw error
     }
+  },
+  'receive': function (msg, $meta) {
+    if ($meta.mtid === 'error') {
+      return msg
+    }
+    if (msg && msg.payload) {
+      if (msg.payload.result) {
+        return msg.payload.result
+      } else if (msg.payload.error) {
+        throw msg.payload.error
+      }
+      throw errors.wrongJsonRpcFormat(msg)
+    }
+    throw errors.generic(msg)
   }
 }
