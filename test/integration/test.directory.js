@@ -1,6 +1,7 @@
 var test = require('ut-run/test')
 var joi = require('joi')
-const URI = '00359######'
+const remoteURI = 'http://centraldirectory.com/griffin'
+const localURI = '00359######'
 
 test({
   type: 'integration',
@@ -9,10 +10,23 @@ test({
   clientConfig: require('../client/test'),
   steps: function (test, bus, run) {
     run(test, bus, [{
-      name: 'Get existing user',
+      name: 'Get existing user from remote',
       method: 'directory.user.get',
       params: {
-        URI: URI
+        URI: remoteURI
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, {
+          name: joi.string().valid('### #### ######').required(),
+          account: joi.string().valid('https://####.###/######').required(),
+          currency: joi.string().valid('TZS').required()
+        }).error, null, 'return user name, account and currency')
+      }
+    }, {
+      name: 'Get existing user from local',
+      method: 'directory.user.get',
+      params: {
+        URI: localURI
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, {
@@ -66,15 +80,14 @@ test({
       name: 'Get with id:uri',
       method: 'directory.user.get',
       params: {
-        URI: 'id' + URI
+        URI: 'id:' + localURI
       },
-      error: (error, assert) => {
-        assert.equals(joi.validate(error, joi.object().keys({
-          code: joi.number().required(),
-          errorPrint: joi.string().required(),
-          message: joi.string().required()
-          // type: joi.valid('Directory.UserNotFound').required()
-        }).required()).error, null, 'return code and type of the failure')
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, {
+          name: joi.string().valid('### #### ######').required(),
+          account: joi.string().valid('https://####.###/######').required(),
+          currency: joi.string().valid('TZS').required()
+        }).error, null, 'return user name, account and currency')
       }
     }])
   }
