@@ -1,14 +1,21 @@
 var error = require('./error')
-const user = {
+var user = {
   name: '### #### ######',
   account: 'https://####.###/######',
   currency: 'TZS'
 }
-const users = {
+var users = {
   'id:00359######': user
 }
 
+function callDb (msg, $meta) {
+  $meta.method = 'db/' + $meta.method
+  return this.bus.importMethod($meta.method)(msg, $meta)
+}
+
 module.exports = {
+  'user.add': callDb,
+  'user.remove': callDb,
   'user.get': function (params, $meta) {
     if (typeof params.URI === 'string' && params.URI.startsWith('id:')) {
       if (this.config.mock) {
