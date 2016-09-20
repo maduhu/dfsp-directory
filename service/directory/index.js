@@ -30,9 +30,9 @@ module.exports = {
           userNumber: params.URI.substr(3)
         }, $meta)
         .then((u) => {
-          if (u && u.length) {
+          if (u && u.name) {
             return {
-              name: u[0].name,
+              name: u.name,
               account: user.account,
               currency: user.currency
             }

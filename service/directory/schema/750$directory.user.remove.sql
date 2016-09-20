@@ -1,7 +1,8 @@
 CREATE OR REPLACE FUNCTION directory."user.remove"(
   "@actorId" integer
 ) RETURNS TABLE(
-  "actorId" integer
+  "actorId" integer,
+  "isSingleResult" boolean
 )
 AS
 $body$
@@ -11,7 +12,8 @@ $body$
     RETURNING *
   )
   SELECT
-    a."actorId"
+    a."actorId",
+    true AS "isSingleResult"
   FROM a
 $body$
 LANGUAGE SQL

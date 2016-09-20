@@ -5,7 +5,8 @@ CREATE OR REPLACE FUNCTION directory."user.add"(
 RETURNS TABLE(
     "actorId" integer,
     "endUserNumber" varchar(20),
-    "name" varchar(255)
+    "name" varchar(255),
+    "isSingleResult" boolean
 ) AS
 $BODY$
     WITH u as (
@@ -14,7 +15,8 @@ $BODY$
         RETURNING *
     )
     SELECT
-        *
+        *,
+        true AS "isSingleResult"
     FROM u
 $BODY$
 LANGUAGE SQL
