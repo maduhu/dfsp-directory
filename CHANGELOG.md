@@ -1,3 +1,16 @@
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.1.2...v0.1.3) (2016-09-21)
+
+
+### Bug Fixes
+
+* fix console port settings ([02a26d7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/02a26d7))
+* fix dependencies ([1649601](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/1649601))
+* refactor db structure and add functions directory.user.get and directory.user.remove ([13bc816](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/13bc816))
+* return single resultsets from DB ([594bc54](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/594bc54))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.1.1...v0.1.2) (2016-09-19)
 
