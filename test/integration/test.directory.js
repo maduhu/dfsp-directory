@@ -45,7 +45,9 @@ test({
         assert.equals(joi.validate(error, joi.object().keys({
           code: joi.number().required(),
           errorPrint: joi.string(),
-          message: joi.string().required()
+          print: joi.string(),
+          message: joi.string().required(),
+          type: joi.valid('PortRPC').required() // todo should be Directory.UserNotFound
           // type: joi.valid('Directory.UserNotFound').required()
         }).required()).error, null, 'return code and type of the failure')
       }
@@ -58,8 +60,9 @@ test({
         assert.equals(joi.validate(error, joi.object().keys({
           code: joi.number().required(),
           errorPrint: joi.string().required(),
+          print: joi.string(),
           message: joi.string().required(),
-          type: joi.valid('PortHTTP').required() // todo should be Directory.UserNotFound
+          type: joi.valid('PortRPC').required() // todo should be Directory.UserNotFound
         }).required()).error, null, 'return code and type of the failure')
       }
     }, {
@@ -72,8 +75,9 @@ test({
         assert.equals(joi.validate(error, joi.object().keys({
           code: joi.number().required(),
           errorPrint: joi.string().required(),
+          print: joi.string(),
           message: joi.string().required(),
-          type: joi.valid('PortHTTP').required() // todo should be Directory.UserNotFound
+          type: joi.valid('PortRPC').required() // todo should be Directory.UserNotFound
         }).required()).error, null, 'return code and type of the failure')
       }
     }, {
