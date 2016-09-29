@@ -1,6 +1,7 @@
 var test = require('ut-run/test')
 var joi = require('joi')
-const remoteURI = 'http://centraldirectory.com/griffin'
+// todo mock for remote
+// const remoteURI = 'http://centraldirectory.com/griffin'
 const localURI = '00359######'
 
 test({
@@ -10,19 +11,19 @@ test({
   clientConfig: require('../client/test'),
   steps: function (test, bus, run) {
     run(test, bus, [{
-      name: 'Get existing user from remote',
-      method: 'directory.user.get',
-      params: {
-        URI: remoteURI
-      },
-      result: (result, assert) => {
-        assert.equals(joi.validate(result, {
-          name: joi.string().valid('Chris Griffin').required(),
-          account: joi.string().valid('http://receivingdfsp.com/griffin_12345').required(),
-          currency: joi.string().valid('USD').required()
-        }).error, null, 'return user name, account and currency')
-      }
-    }, {
+    //   name: 'Get existing user from remote',
+    //   method: 'directory.user.get',
+    //   params: {
+    //     URI: remoteURI
+    //   },
+    //   result: (result, assert) => {
+    //     assert.equals(joi.validate(result, {
+    //       name: joi.string().valid('Chris Griffin').required(),
+    //       account: joi.string().valid('http://receivingdfsp.com/griffin_12345').required(),
+    //       currency: joi.string().valid('USD').required()
+    //     }).error, null, 'return user name, account and currency')
+    //   }
+    // }, {
       name: 'Get existing user from local',
       method: 'directory.user.get',
       params: {
