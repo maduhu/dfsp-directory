@@ -3,7 +3,7 @@ var errors = require('./errors')
 module.exports = {
   id: 'ist',
   createPort: require('ut-port-http'),
-  url: 'http://ec2-52-37-54-209.us-west-2.compute.amazonaws.com:8081/directory/v1/user',
+  url: 'http://ec2-52-37-54-209.us-west-2.compute.amazonaws.com:8088/directory/v1/user',
   namespace: ['ist/directory'],
   raw: {
     json: true,
