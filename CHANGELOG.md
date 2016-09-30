@@ -1,3 +1,14 @@
+<a name="0.1.7"></a>
+## [0.1.7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.1.6...v0.1.7) (2016-09-30)
+
+
+### Bug Fixes
+
+* fix circle ci build ([a52148f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/a52148f))
+* fix directory URL ([ab2a96b](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/ab2a96b))
+
+
+
 <a name="0.1.6"></a>
 ## [0.1.6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.1.5...v0.1.6) (2016-09-29)
 
