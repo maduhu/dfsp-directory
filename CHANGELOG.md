@@ -1,3 +1,18 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.1.7...v0.2.0) (2016-10-11)
+
+
+### Bug Fixes
+
+* add .npmrc ([689fef0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/689fef0))
+
+
+### Features
+
+* automate build ([efe6665](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/efe6665))
+
+
+
 <a name="0.1.7"></a>
 ## [0.1.7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.1.6...v0.1.7) (2016-09-30)
 
