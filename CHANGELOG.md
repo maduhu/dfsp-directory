@@ -1,3 +1,13 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.2.1...v0.3.0) (2016-10-13)
+
+
+### Features
+
+* changes related to requiring peer implementations from tests ([8902441](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/8902441))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.2.0...v0.2.1) (2016-10-13)
 
