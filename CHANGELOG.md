@@ -1,3 +1,13 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.2.0...v0.2.1) (2016-10-13)
+
+
+### Bug Fixes
+
+* upgrade dependencies ([b8626a4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/b8626a4))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.1.7...v0.2.0) (2016-10-11)
 
