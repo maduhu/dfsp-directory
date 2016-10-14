@@ -1,3 +1,16 @@
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.3.0...v0.3.1) (2016-10-14)
+
+
+### Bug Fixes
+
+* fix publishing ([854de99](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/854de99))
+* ignore .npmrc ([1ed2c75](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/1ed2c75))
+* update ut-tools ([97b66e7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/97b66e7))
+* update ut-tools ([570ab86](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/570ab86))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.2.1...v0.3.0) (2016-10-13)
 
