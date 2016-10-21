@@ -1,3 +1,13 @@
+<a name="0.3.2"></a>
+## [0.3.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.3.1...v0.3.2) (2016-10-21)
+
+
+### Bug Fixes
+
+* disable repl and prepare mock setting ([7f281e1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/7f281e1))
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.3.0...v0.3.1) (2016-10-14)
 
