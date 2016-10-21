@@ -1,5 +1,6 @@
 {
   "implementation": "dfsp-directory",
+  "repl": false,
   "console": {
     "port": 30011,
     "server": {
@@ -27,6 +28,9 @@
   },
   "workerBus": {
     "logLevel": "debug"
+  },
+  "#ist" : {
+    "url": "http://localhost:8021/directory/user"
   },
   "db": {
     "logLevel": "trace",
