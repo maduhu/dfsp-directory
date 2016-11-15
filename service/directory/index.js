@@ -17,7 +17,11 @@ module.exports = {
   'user.add': callDb,
   'user.remove': callDb,
   'user.get': function (params, $meta) {
-    if (typeof params.URI === 'string' && params.URI.startsWith('id:')) {
+    if (typeof params.URI === 'string' && params.URI.startsWith('actor:')) {
+      return this.bus.importMethod('db/directory.user.get')({
+        actorId: params.URI.split(':').pop()
+      }, $meta)
+    } else if (typeof params.URI === 'string' && params.URI.startsWith('id:')) {
       if (this.config.mock) {
         var result = users[params && params.URI]
         if (result) {
@@ -27,7 +31,7 @@ module.exports = {
         }
       } else {
         return this.bus.importMethod('db/directory.user.get')({
-          userNumber: params.URI.substr(3)
+          userNumber: params.URI.split(':').pop()
         }, $meta)
         .then((u) => {
           if (u && u.name) {
