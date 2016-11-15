@@ -29,9 +29,6 @@
   "workerBus": {
     "logLevel": "debug"
   },
-  "#####ist" : {
-    "url": "http://localhost:8021/directory/user"
-  },
   "db": {
     "logLevel": "trace",
     "db": {
