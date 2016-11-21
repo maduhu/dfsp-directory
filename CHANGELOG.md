@@ -1,3 +1,26 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.3.2...v0.4.0) (2016-11-21)
+
+
+### Bug Fixes
+
+* add possibility to get user information based on actor ([d6eaecd](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/d6eaecd))
+* add validation for dfsp key in directory.user.get ([7a2e878](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/7a2e878))
+* add validations and move mock to external ocnfig ([d387e91](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/d387e91))
+* comment ist mock back ([f56045a](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/f56045a))
+* fix tests ([4932a1b](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/4932a1b))
+* fix tests ([81832f9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/81832f9))
+* issue [#283](https://github.com/LevelOneProject/dfsp-directory/issues/283) - DFSP License files are incorrect ([91221e5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/91221e5))
+* update central directory endpoint ([457bd3d](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/457bd3d))
+* update dependencies ([8d32818](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/8d32818))
+
+
+### Features
+
+* add actorId as an extra argument to directory.user.get ([675ffbb](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/675ffbb))
+
+
+
 <a name="0.3.2"></a>
 ## [0.3.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.3.1...v0.3.2) (2016-10-21)
 
