@@ -44,7 +44,7 @@ test({
       },
       error: (error, assert) => {
         assert.equals(joi.validate(error, joi.object().keys({
-          code: joi.number().required(),
+          code: joi.alternatives().try(joi.number(), joi.string()).required(),
           errorPrint: joi.string(),
           print: joi.string(),
           message: joi.string().required(),
@@ -59,7 +59,7 @@ test({
       },
       error: (error, assert) => {
         assert.equals(joi.validate(error, joi.object().keys({
-          code: joi.number().required(),
+          code: joi.alternatives().try(joi.number(), joi.string()).required(),
           errorPrint: joi.string(),
           print: joi.string(),
           message: joi.string().required(),
@@ -74,7 +74,7 @@ test({
       },
       error: (error, assert) => {
         assert.equals(joi.validate(error, joi.object().keys({
-          code: joi.number().required(),
+          code: joi.alternatives().try(joi.number(), joi.string()).required(),
           errorPrint: joi.string(),
           print: joi.string(),
           message: joi.string().required(),
