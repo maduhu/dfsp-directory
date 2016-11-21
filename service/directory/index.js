@@ -17,6 +17,9 @@ module.exports = {
   'user.add': callDb,
   'user.remove': callDb,
   'user.get': function (params, $meta) {
+    if (params.URI === '00359######') { // keep the mock
+      params.URI = 'id:' + params.URI
+    }
     if (typeof params.URI === 'string' && params.URI.startsWith('actor:')) {
       return this.bus.importMethod('db/directory.user.get')({
         actorId: params.URI.split(':').pop()

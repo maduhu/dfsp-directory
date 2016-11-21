@@ -14,13 +14,6 @@ module.exports = {
   requestTimeout: 300000,
   method: 'post',
   'directory.user.get.request.send': function (msg) {
-    if (msg.URI === '00359######') { // keep the mock
-      return {
-        url: 'http://localhost:8011/rpc/',
-        uri: 'directory.user.get',
-        payload: {URI: 'id:' + msg.URI}
-      }
-    }
     return {
       uri: '/get',
       payload: {

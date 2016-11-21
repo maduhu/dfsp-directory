@@ -60,7 +60,7 @@ test({
       error: (error, assert) => {
         assert.equals(joi.validate(error, joi.object().keys({
           code: joi.number().required(),
-          errorPrint: joi.string().required(),
+          errorPrint: joi.string(),
           print: joi.string(),
           message: joi.string().required(),
           type: joi.valid('PortRPC').required() // todo should be Directory.UserNotFound
@@ -75,11 +75,11 @@ test({
       error: (error, assert) => {
         assert.equals(joi.validate(error, joi.object().keys({
           code: joi.number().required(),
-          errorPrint: joi.string().required(),
+          errorPrint: joi.string(),
           print: joi.string(),
           message: joi.string().required(),
-          type: joi.valid('PortRPC').required() // todo should be Directory.UserNotFound
-        }).required()).error, null, 'return code and type of the failure')
+          type: joi.valid(['PortRPC', 'PortHTTP']).required() // todo should be Directory.UserNotFound
+        }).required().unknown()).error, null, 'return code and type of the failure')
       }
     }, {
       name: 'Get with id:uri',
