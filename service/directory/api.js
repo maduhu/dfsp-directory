@@ -13,7 +13,7 @@ module.exports = {
       account: joi.string(),
       currency: joi.string(),
       endUserNumber: joi.string(),
-      dfsp: joi.string()
+      submissionUrl: joi.string()
     })
   },
   'user.add': {
