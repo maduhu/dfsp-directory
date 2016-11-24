@@ -14,44 +14,19 @@ function callDb (msg, $meta) {
 }
 
 module.exports = {
-  'user.add': callDb,
   'user.remove': callDb,
+  'user.add': function(params, $meta) {
+    return this.bus.importMethod('ist/directory.user.add')({
+      url: 'http://localhost:8010'
+    }, $meta)
+    .then((res) => {
+      return this.bus.importMethod('db/directory.user.add')({
+        userNumber: res.number,
+        name: params.name
+      }, $meta)
+    })
+  },
   'user.get': function (params, $meta) {
-    if (params.URI === '00359######') { // keep the mock
-      params.URI = 'id:' + params.URI
-    }
-    if (typeof params.URI === 'string' && params.URI.startsWith('actor:')) {
-      return this.bus.importMethod('db/directory.user.get')({
-        actorId: params.URI.split(':').pop()
-      }, $meta)
-    } else if (typeof params.URI === 'string' && params.URI.startsWith('id:')) {
-      if (this.config.mock) {
-        var result = users[params && params.URI]
-        if (result) {
-          return result
-        } else {
-          throw error.userNotFound()
-        }
-      } else {
-        return this.bus.importMethod('db/directory.user.get')({
-          userNumber: params.URI.split(':').pop()
-        }, $meta)
-        .then((u) => {
-          if (u && u.name) {
-            return {
-              name: u.name,
-              account: user.account,
-              currency: user.currency
-            }
-          } else {
-            throw error.userNotFound()
-          }
-        })
-      }
-    } else {
-      return this.bus.importMethod('ist/directory.user.get')({
-        URI: params.URI
-      }, $meta)
-    }
+    return this.bus.importMethod('db/directory.user.get')(params, $meta)
   }
 }
