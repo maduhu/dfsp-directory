@@ -2,11 +2,9 @@ module.exports = {
   ports: [
     require('../db'),
     require('../httpserver'),
-    require('../rest'),
     require('../script')
   ],
   modules: {
-    'db/directory': require('../service/directory/db'),
     directory: require('../service/directory'),
     identity: require('../service/identity')
   },
