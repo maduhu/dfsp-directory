@@ -1,3 +1,19 @@
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.4.0...v0.4.1) (2016-11-25)
+
+
+### Bug Fixes
+
+* comment cover.js ([d78b6ea](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/d78b6ea))
+* comment tests ([3237bd1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/3237bd1))
+* linting ([71b73ef](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/71b73ef))
+* major refactoring ([07886da](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/07886da))
+* remove integration to ist as it was implemented in dfsp-api ([614a5e8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/614a5e8))
+* swap dfsp with submissionUrl ([d0f53cf](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/d0f53cf))
+* update dependencies ([558a870](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/558a870))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.3.2...v0.4.0) (2016-11-21)
 
