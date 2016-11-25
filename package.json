@@ -31,22 +31,22 @@
   },
   "dependencies": {
     "joi": "9.1.1",
-    "ut-bus": "^5.6.1",
+    "ut-bus": "^5.6.2",
     "ut-error": "^5.3.16",
-    "ut-port-console": "^6.1.6",
-    "ut-port-http": "^6.3.12",
-    "ut-port-httpserver": "^8.0.0",
-    "ut-port-script": "^5.4.6",
-    "ut-port-postgres": "^5.7.3",
+    "ut-port-console": "^6.1.8",
+    "ut-port-http": "^6.3.14",
+    "ut-port-httpserver": "^8.1.1",
+    "ut-port-script": "^5.4.7",
+    "ut-port-postgres": "^5.7.4",
     "ut-port-performance": "^5.4.7",
-    "ut-run": "^7.0.0",
+    "ut-run": "^7.0.3",
     "pm2": "2.0.18"
   },
   "devDependencies": {
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-port-jsonrpc": "^5.5.6",
-    "ut-tools": "^5.10.7"
+    "ut-port-jsonrpc": "^5.5.7",
+    "ut-tools": "^5.10.8"
   },
   "repository": {
     "type": "git",
