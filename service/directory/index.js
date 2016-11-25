@@ -1,12 +1,4 @@
-var error = require('./error')
-var user = {
-  name: '### #### ######',
-  account: 'https://####.###/######',
-  currency: 'TZS'
-}
-var users = {
-  'id:00359######': user
-}
+// var error = require('./error')
 
 function callDb (msg, $meta) {
   $meta.method = 'db/' + $meta.method
@@ -15,7 +7,7 @@ function callDb (msg, $meta) {
 
 module.exports = {
   'user.remove': callDb,
-  'user.add': function(params, $meta) {
+  'user.add': function (params, $meta) {
     return this.bus.importMethod('ist/directory.user.add')({
       url: 'http://localhost:8010'
     }, $meta)

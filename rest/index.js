@@ -1,4 +1,4 @@
-var errors = require('./errors')
+// var errors = require('./errors')
 
 module.exports = {
   id: 'ist',
