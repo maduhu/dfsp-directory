@@ -35,7 +35,7 @@
     "ut-error": "^5.3.16",
     "ut-port-console": "^6.1.8",
     "ut-port-http": "^6.3.14",
-    "ut-port-httpserver": "^8.1.1",
+    "ut-port-httpserver": "8.1.1",
     "ut-port-script": "^5.4.7",
     "ut-port-postgres": "^5.7.4",
     "ut-port-performance": "^5.4.7",
