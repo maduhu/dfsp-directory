@@ -5,7 +5,7 @@ module.exports = {
     path: path.join(__dirname, 'schema'),
     linkSP: true
   }],
-  'user.get.response.receive': function(msg, $meta) {
+  'user.get.response.receive': function (msg, $meta) {
     if (Array.isArray(msg) && !msg.length) {
       throw error.userNotFound()
     }
