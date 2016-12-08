@@ -1,3 +1,13 @@
+<a name="0.4.4"></a>
+## [0.4.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.4.3...v0.4.4) (2016-12-08)
+
+
+### Bug Fixes
+
+* validation ([b35efbc](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/b35efbc))
+
+
+
 <a name="0.4.3"></a>
 ## [0.4.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.4.2...v0.4.3) (2016-11-29)
 
