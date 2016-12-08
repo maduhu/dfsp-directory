@@ -15,7 +15,7 @@ module.exports = {
       currency: joi.string(),
       actorId: joi.number(),
       endUserNumber: joi.string(),
-      submissionUrl: joi.string()
+      spspServer: joi.string()
     })
   },
   'user.add': {
