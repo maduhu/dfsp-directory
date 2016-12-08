@@ -1,3 +1,14 @@
+<a name="0.4.3"></a>
+## [0.4.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.4.2...v0.4.3) (2016-11-29)
+
+
+### Bug Fixes
+
+* add 'user not found' error ([9c4df1b](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/9c4df1b))
+* linting ([302cf24](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/302cf24))
+
+
+
 <a name="0.4.2"></a>
 ## [0.4.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.4.1...v0.4.2) (2016-11-28)
 
