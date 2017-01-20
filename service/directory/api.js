@@ -18,6 +18,14 @@ module.exports = {
       spspServer: joi.string()
     })
   },
+  'user.fetch': {
+    // tags: ['tag1', 'tag2'],
+    description: '',
+    notes: '',
+    auth: false,
+    params: joi.any(),
+    result: joi.any()
+  },
   'user.add': {
     // tags: ['tag1', 'tag2'],
     description: '',
