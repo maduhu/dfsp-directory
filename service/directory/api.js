@@ -10,7 +10,10 @@ module.exports = {
       userNumber: joi.string().default('1')
     }),
     result: joi.object({
-      name: joi.string().required(),
+      firstName: joi.string().required(),
+      lastName: joi.string().required(),
+      dob: joi.string(),
+      nationalId: joi.string(),
       account: joi.string(),
       currency: joi.string(),
       actorId: joi.number(),
