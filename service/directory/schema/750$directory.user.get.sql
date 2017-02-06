@@ -3,15 +3,21 @@ CREATE OR REPLACE FUNCTION directory."user.get"(
     "@actorId" int
 )
 RETURNS TABLE(
-    "name" text,
+    "firstName" varchar(255),
+    "lastName" varchar(255),
     "actorId" int,
+    "dob" date,
+    "nationalId" varchar(255),
     "endUserNumber" varchar(20),
     "isSingleResult" boolean
 ) AS
 $BODY$
     SELECT
-        "name",
+        "firstName",
+        "lastName",
         "actorId",
+        "dob",
+        "nationalId",
         "endUserNumber",
         true AS "isSingleResult"
     FROM
