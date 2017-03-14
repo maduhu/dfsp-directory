@@ -4,6 +4,7 @@ module.exports = {
   createPort: require('ut-port-httpserver'),
   logLevel: 'trace',
   api: ['directory'],
+  imports: ['directory.start'],
   port: 8011,
   bundle: 'directory',
   dist: path.resolve(__dirname, '../dist'),
