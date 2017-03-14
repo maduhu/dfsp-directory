@@ -20,10 +20,11 @@ $body$
   SELECT
     a."actorId",
     (
-      SELECT row_to_json(identifiers)
+      SELECT array_to_json(array_agg(identifiers))
       FROM (
-          SELECT 
-              di."identifier", di."identifierTypeCode"
+          SELECT
+              di."identifier",
+              di."identifierTypeCode"
             FROM
               di
           WHERE

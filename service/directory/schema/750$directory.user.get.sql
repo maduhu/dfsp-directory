@@ -31,9 +31,9 @@ RETURN QUERY
         u."dob",
         u."nationalId",
         (
-            SELECT row_to_json(x)
+            SELECT array_to_json(array_agg(x))
             FROM (
-                SELECT 
+                SELECT
                     i."identifier", i."identifierTypeCode"
                  FROM
                     directory."identifier" i

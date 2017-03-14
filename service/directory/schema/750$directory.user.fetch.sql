@@ -17,9 +17,9 @@ $BODY$
         u."dob",
         u."nationalId",
         (
-            SELECT row_to_json(identifiers)
+            SELECT array_to_json(array_agg(identifiers))
             FROM (
-                SELECT 
+                SELECT
                     i."identifier", i."identifierTypeCode"
                  FROM
                     directory."identifier" i
