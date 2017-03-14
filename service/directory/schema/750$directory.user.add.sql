@@ -19,17 +19,30 @@ RETURNS TABLE(
 $BODY$
     WITH u as (
         INSERT INTO directory.user ("firstName", "lastName", "dob", "nationalId")
-        VALUES ("@userNumber", "@firstName", "@lastName", "@dob", "@nationalId")
+        VALUES ("@firstName", "@lastName", "@dob", "@nationalId")
+        RETURNING *
+    ),
+    i as (
+        INSERT INTO directory.identifier ("identifier", "actorId", "identifierTypeCode")
+        VALUES (
+                "@identifier", 
+                (
+                    SELECT 
+                        u."actorId" 
+                    FROM 
+                        u
+                ), 
+                "@identifierTypeCode")
         RETURNING *
     )
-
-    INSERT INTO directory.identifier ("identifier", "actorId", "identifierTypeCode")
-    VALUES ("@identifier", u."actorId", "@lastName", "@identifierTypeCode")
-
     SELECT
-        *,
+        u."actorId",
         "@identifier" as "identifier",
-        "@identifierTypeCode" as "identifierTypeCode"
+        "@identifierTypeCode" as "identifierTypeCode",
+        u."firstName",
+        u."lastName",
+        u."dob",
+        u."nationalId",
         true AS "isSingleResult"
     FROM u
 $BODY$
