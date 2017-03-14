@@ -8,8 +8,8 @@ CREATE OR REPLACE FUNCTION directory."user.add"(
 )
 RETURNS TABLE(
     "actorId" INTEGER,
-    "@identifier" VARCHAR(20),
-    "@identifierTypeCode" VARCHAR(3),
+    "identifier" VARCHAR(20),
+    "identifierTypeCode" VARCHAR(3),
     "firstName" VARCHAR(255),
     "lastName" VARCHAR(255),
     "dob" DATE,
