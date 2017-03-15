@@ -6,8 +6,9 @@ module.exports = {
     notes: 'When the central directory service is asked to return information about the user (user.lookup API on the top level architect diagram), first it will check internally and find the URL of the default DFSP of the user, then it will send a call to this DFSP getting the information about the name of the user, default currency of the user and default account of the user (ILP address) and finally will return this information as a response to user.lookup API request.',
     auth: false,
     params: joi.object({
-      actorId: joi.string().default('1000'),
-      userNumber: joi.string().default('1')
+      actorId: joi.string().example('1000'),
+      identifier: joi.string().example('1'),
+      identifierTypeCode: joi.string().example('phn')
     }),
     result: joi.object({
       firstName: joi.string().required(),
@@ -17,7 +18,7 @@ module.exports = {
       account: joi.string(),
       currency: joi.string(),
       actorId: joi.number(),
-      endUserNumber: joi.string(),
+      identifiers: joi.array(),
       spspServer: joi.string()
     })
   },
