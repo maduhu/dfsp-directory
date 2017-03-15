@@ -1,3 +1,17 @@
+<a name="0.6.1"></a>
+## [0.6.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.6.0...v0.6.1) (2017-03-15)
+
+
+### Bug Fixes
+
+* add identifier table and rework user functions ([2416463](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/2416463))
+* add possibility to inspect db ([f0abbad](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/f0abbad))
+* fixing typos ([466898c](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/466898c))
+* json aggregation in db ([90f9ccd](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/90f9ccd))
+* refactor user functions regarding add, remove, get and fetch ([7b08eaf](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/7b08eaf))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.5.1...v0.6.0) (2017-02-06)
 
