@@ -47,7 +47,7 @@ RETURN QUERY
     JOIN
         directory.identifier di ON di."actorId" = u."actorId"
     WHERE
-        di."identifier" = "@identifier" OR di."identifierTypeCode" = "@identifierTypeCode" OR u."actorId" = "@actorId"
+        di."identifier" = "@identifier" AND ("@identifierTypeCode" IS NULL OR di."identifierTypeCode" = "@identifierTypeCode") OR u."actorId" = "@actorId"
     GROUP BY
         u."actorId"
     LIMIT 1;
