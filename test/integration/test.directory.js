@@ -1,0 +1,369 @@
+var test = require('ut-run/test')
+var joi = require('joi')
+var uuid = require('uuid/v4')
+
+const IDENTIFIER_1 = uuid()
+const FIRST_NAME_1 = uuid()
+const LAST_NAME_1 = uuid()
+const NATIONAL_ID_1 = uuid()
+
+const IDENTIFIER_2 = uuid()
+const FIRST_NAME_2 = uuid()
+const LAST_NAME_2 = uuid()
+const NATIONAL_ID_2 = uuid()
+
+test({
+  type: 'integration',
+  name: 'Directory service',
+  client: require('../client'),
+  clientConfig: require('../client/test'),
+  steps: function (test, bus, run) {
+    run(test, bus, [
+      {
+        name: 'Add user #1',
+        method: 'directory.user.add',
+        params: (context) => {
+          return {
+            identifier: IDENTIFIER_1,
+            identifierTypeCode: 'phn',
+            firstName: FIRST_NAME_1,
+            lastName: LAST_NAME_1,
+            dob: '1972/01/02',
+            nationalId: NATIONAL_ID_1
+          }
+        },
+        result: (result, assert) => {
+          assert.equals(joi.validate(result, {
+            actorId: joi.number().required(),
+            identifier: joi.string().valid(IDENTIFIER_1).required(),
+            identifierTypeCode: joi.string().valid('phn').required(),
+            firstName: joi.string().valid(FIRST_NAME_1).required(),
+            lastName: joi.string().valid(LAST_NAME_1).required(),
+            dob: joi.date().required(),
+            nationalId: joi.string().valid(NATIONAL_ID_1).required()
+          }).error, null, 'user added successfully')
+        }
+      },
+      {
+        name: 'Add user #2',
+        method: 'directory.user.add',
+        params: (context) => {
+          return {
+            identifier: IDENTIFIER_2,
+            identifierTypeCode: 'phn',
+            firstName: FIRST_NAME_2,
+            lastName: LAST_NAME_2,
+            dob: '1972/01/02',
+            nationalId: NATIONAL_ID_2
+          }
+        },
+        result: (result, assert) => {
+          assert.equals(joi.validate(result, {
+            actorId: joi.number().required(),
+            identifier: joi.string().valid(IDENTIFIER_2).required(),
+            identifierTypeCode: joi.string().valid('phn').required(),
+            firstName: joi.string().valid(FIRST_NAME_2).required(),
+            lastName: joi.string().valid(LAST_NAME_2).required(),
+            dob: joi.date().required(),
+            nationalId: joi.string().valid(NATIONAL_ID_2).required()
+          }).error, null, 'user added successfully')
+        }
+      },
+      {
+        name: 'Fetch single user',
+        method: 'directory.user.fetch',
+        params: (context) => {
+          return {
+            actorId: [context['Add user #1'].actorId]
+          }
+        },
+        result: (result, assert) => {
+          assert.equals(
+            joi.validate(result, joi.array().items({
+              actorId: joi.number().required(),
+              identifiers: joi.array().items({
+                identifier: IDENTIFIER_1,
+                identifierTypeCode: 'phn'
+              }).length(1).required(),
+              firstName: joi.string().valid(FIRST_NAME_1).required(),
+              lastName: joi.string().valid(LAST_NAME_1).required(),
+              dob: joi.date().required(),
+              nationalId: joi.string().valid(NATIONAL_ID_1).required()
+            }).length(1)).error,
+            null,
+            'user fetched successfully'
+          )
+        }
+      },
+      {
+        name: 'Fetch users',
+        method: 'directory.user.fetch',
+        params: (context) => {
+          return {
+            actorId: [context['Add user #1'].actorId, context['Add user #2'].actorId]
+          }
+        },
+        result: (result, assert) => {
+          assert.equals(
+            joi.validate(result, joi.array().ordered({
+              actorId: joi.number().required(),
+              identifiers: joi.array().items({
+                identifier: IDENTIFIER_1,
+                identifierTypeCode: 'phn'
+              }).length(1).required(),
+              firstName: joi.string().valid(FIRST_NAME_1).required(),
+              lastName: joi.string().valid(LAST_NAME_1).required(),
+              dob: joi.date().required(),
+              nationalId: joi.string().valid(NATIONAL_ID_1).required()
+            },
+              {
+                actorId: joi.number().required(),
+                identifiers: joi.array().items({
+                  identifier: IDENTIFIER_2,
+                  identifierTypeCode: 'phn'
+                }).length(1).required(),
+                firstName: joi.string().valid(FIRST_NAME_2).required(),
+                lastName: joi.string().valid(LAST_NAME_2).required(),
+                dob: joi.date().required(),
+                nationalId: joi.string().valid(NATIONAL_ID_2).required()
+              }).length(2)).error,
+            null,
+            'users fetched successfully'
+          )
+        }
+      },
+      {
+        name: 'Fetch empty users',
+        method: 'directory.user.fetch',
+        params: {},
+        result: (result, assert) => {
+          assert.deepEquals(
+            result,
+            [],
+            'no users fetched successfully'
+          )
+        }
+      },
+      {
+        name: 'Get user by actorId',
+        method: 'directory.user.get',
+        params: (context) => {
+          return {
+            actorId: context['Add user #1'].actorId
+          }
+        },
+        result: (result, assert) => {
+          assert.equals(
+            joi.validate(result, {
+              actorId: joi.number().required(),
+              identifiers: joi.array().items({
+                identifier: IDENTIFIER_1,
+                identifierTypeCode: 'phn'
+              }).length(1).required(),
+              firstName: joi.string().valid(FIRST_NAME_1).required(),
+              lastName: joi.string().valid(LAST_NAME_1).required(),
+              dob: joi.date().required(),
+              nationalId: joi.string().valid(NATIONAL_ID_1).required()
+            }).error,
+            null,
+            'user get successfully'
+          )
+        }
+      },
+      {
+        name: 'Get user by actorId and identifier',
+        method: 'directory.user.get',
+        params: (context) => {
+          return {
+            actorId: context['Add user #1'].actorId,
+            identifier: IDENTIFIER_1
+          }
+        },
+        result: (result, assert) => {
+          assert.equals(
+            joi.validate(result, {
+              actorId: joi.number().required(),
+              identifiers: joi.array().items({
+                identifier: IDENTIFIER_1,
+                identifierTypeCode: 'phn'
+              }).length(1).required(),
+              firstName: joi.string().valid(FIRST_NAME_1).required(),
+              lastName: joi.string().valid(LAST_NAME_1).required(),
+              dob: joi.date().required(),
+              nationalId: joi.string().valid(NATIONAL_ID_1).required()
+            }).error,
+            null,
+            'user get successfully'
+          )
+        }
+      },
+      {
+        name: 'Get user by actorId and identifier and identifier type',
+        method: 'directory.user.get',
+        params: (context) => {
+          return {
+            actorId: context['Add user #1'].actorId,
+            identifier: IDENTIFIER_1,
+            identifierTypeCode: 'phn'
+          }
+        },
+        result: (result, assert) => {
+          assert.equals(
+            joi.validate(result, {
+              actorId: joi.number().required(),
+              identifiers: joi.array().items({
+                identifier: IDENTIFIER_1,
+                identifierTypeCode: 'phn'
+              }).length(1).required(),
+              firstName: joi.string().valid(FIRST_NAME_1).required(),
+              lastName: joi.string().valid(LAST_NAME_1).required(),
+              dob: joi.date().required(),
+              nationalId: joi.string().valid(NATIONAL_ID_1).required()
+            }).error,
+            null,
+            'user get successfully'
+          )
+        }
+      },
+      {
+        name: 'Get user by actorId and identifier type',
+        method: 'directory.user.get',
+        params: (context) => {
+          return {
+            actorId: context['Add user #1'].actorId,
+            identifierTypeCode: 'phn'
+          }
+        },
+        result: (result, assert) => {
+          assert.equals(
+            joi.validate(result, {
+              actorId: joi.number().required(),
+              identifiers: joi.array().items({
+                identifier: IDENTIFIER_1,
+                identifierTypeCode: 'phn'
+              }).length(1).required(),
+              firstName: joi.string().valid(FIRST_NAME_1).required(),
+              lastName: joi.string().valid(LAST_NAME_1).required(),
+              dob: joi.date().required(),
+              nationalId: joi.string().valid(NATIONAL_ID_1).required()
+            }).error,
+            null,
+            'user get successfully'
+          )
+        }
+      },
+      {
+        name: 'Get user without actorId',
+        method: 'directory.user.get',
+        params: (context) => {
+          return {
+            identifier: IDENTIFIER_1,
+            identifierTypeCode: 'phn'
+          }
+        },
+        result: (result, assert) => {
+          assert.equals(
+            joi.validate(result, {
+              actorId: joi.number().required(),
+              identifiers: joi.array().items({
+                identifier: IDENTIFIER_1,
+                identifierTypeCode: 'phn'
+              }).length(1).required(),
+              firstName: joi.string().valid(FIRST_NAME_1).required(),
+              lastName: joi.string().valid(LAST_NAME_1).required(),
+              dob: joi.date().required(),
+              nationalId: joi.string().valid(NATIONAL_ID_1).required()
+            }).error,
+            null,
+            'user get successfully'
+          )
+        }
+      },
+      {
+        name: 'Get user without actorId and identifier',
+        method: 'directory.user.get',
+        params: (context) => {
+          return {
+            identifierTypeCode: 'phn'
+          }
+        },
+        error: (result, assert) => {
+          assert.equals(
+            result.errorPrint,
+            'directory.missingArguments',
+            'get without actorId and identifier throws'
+          )
+        }
+      },
+      {
+        name: 'Get user with invalid identifier type',
+        method: 'directory.user.get',
+        params: (context) => {
+          return {
+            actorId: context['Add user #1'].actorId,
+            identifierTypeCode: 'xxx'
+          }
+        },
+        error: (result, assert) => {
+          assert.equals(
+            result.errorPrint,
+            'directory.identifierTypeCodeNotFound',
+            'get invalid identifier type throws'
+          )
+        }
+      },
+      {
+        name: 'Remove user',
+        method: 'directory.user.remove',
+        params: (context) => {
+          return {
+            actorId: context['Add user #1'].actorId
+          }
+        },
+        result: function (result, assert) {
+          assert.equals(
+            joi.validate(result, {
+              actorId: this['Add user #1'].actorId,
+              identifiers: joi.array().items({
+                identifier: IDENTIFIER_1,
+                identifierTypeCode: 'phn'
+              }).length(1).required()
+            }).error,
+            null,
+            'user removed successfully'
+          )
+        }
+      },
+      {
+        name: 'Remove user no params',
+        method: 'directory.user.remove',
+        params: (context) => {
+          return {}
+        },
+        result: (result, assert) => {
+          assert.deepEquals(
+            result,
+            {},
+            'no user removed successfully'
+          )
+        }
+      },
+      {
+        name: 'Remove user invalid params',
+        method: 'directory.user.remove',
+        params: (context) => {
+          return {
+            actorId: context['Add user #1'].actorId
+          }
+        },
+        result: (result, assert) => {
+          assert.deepEquals(
+            result,
+            {},
+            'no user removed successfully'
+          )
+        }
+      }
+    ])
+  }
+})
