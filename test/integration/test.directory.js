@@ -1,4 +1,5 @@
 var test = require('ut-run/test')
+var config = require('./../lib/appConfig')
 var joi = require('joi')
 var uuid = require('uuid/v4')
 
@@ -15,8 +16,10 @@ const NATIONAL_ID_2 = uuid()
 test({
   type: 'integration',
   name: 'Directory service',
-  client: require('../client'),
-  clientConfig: require('../client/test'),
+  server: config.server,
+  serverConfig: config.serverConfig,
+  client: config.client,
+  clientConfig: config.clientConfig,
   steps: function (test, bus, run) {
     run(test, bus, [
       {
@@ -366,4 +369,4 @@ test({
       }
     ])
   }
-})
+}, module.parent)
