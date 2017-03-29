@@ -3,8 +3,6 @@ machine:
     - docker
   node:
     version: 6.10.1
-  postgres:
-    version: 9.6.2
   environment:
     UT_ENV: circleci
 
