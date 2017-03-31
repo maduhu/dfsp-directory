@@ -21,7 +21,7 @@ test({
   client: config.client,
   clientConfig: config.clientConfig,
   steps: function (test, bus, run) {
-    run(test, bus, [
+    return run(test, bus, [
       {
         name: 'Add user #1',
         method: 'directory.user.add',
