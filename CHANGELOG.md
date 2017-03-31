@@ -1,3 +1,23 @@
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.6.2...v0.7.0) (2017-03-31)
+
+
+### Bug Fixes
+
+* remove postgresql setting from circle.yml ([a753291](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/a753291))
+* return run ([e8aa742](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/e8aa742))
+* test runner ([6f5a275](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/6f5a275))
+* update postgres version in circleci ([b80a198](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/b80a198))
+* update ut-tools ([36af4ad](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/36af4ad))
+* update ut-tools version ([7ec5595](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/7ec5595))
+
+
+### Features
+
+* add tests ([e6d717f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/e6d717f))
+
+
+
 <a name="0.6.2"></a>
 ## [0.6.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.6.1...v0.6.2) (2017-03-17)
 
