@@ -4,7 +4,7 @@ module.exports = {
     require('../httpserver')
   ],
   modules: {
-    directory: require('../service/directory'),
+    directory: require('../service/directory')
   },
   validations: {
     directory: require('../service/directory/api')
