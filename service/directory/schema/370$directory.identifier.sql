@@ -6,5 +6,5 @@ CREATE TABLE directory.identifier(
   CONSTRAINT "pkDirectoryIdentifier" PRIMARY KEY ("identifierId"),
   CONSTRAINT "fkDirectoryIdentifier_directoryUser" FOREIGN KEY ("actorId") REFERENCES directory."user"("actorId"),
   CONSTRAINT "fkDirectoryIdentifier_directoryIdentifierType" FOREIGN KEY ("identifierTypeCode") REFERENCES directory."identifierType"("code"),
-  CONSTRAINT ukDirectoryIdentifierIdentifier_IdentifierTypeCode UNIQUE ("identifier", "identifierTypeCode")
+  CONSTRAINT "ukDirectoryIdentifierIdentifier_IdentifierTypeCode" UNIQUE ("identifier", "identifierTypeCode")
 )
