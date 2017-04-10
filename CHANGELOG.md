@@ -1,3 +1,14 @@
+<a name="0.7.3"></a>
+## [0.7.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.2...v0.7.3) (2017-04-10)
+
+
+### Bug Fixes
+
+* add constraint name in string to preserver case ([5118fc5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/5118fc5))
+* linting ([a560806](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/a560806))
+
+
+
 <a name="0.7.2"></a>
 ## [0.7.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.1...v0.7.2) (2017-04-05)
 
