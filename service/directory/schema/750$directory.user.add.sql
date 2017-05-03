@@ -17,6 +17,12 @@ RETURNS TABLE(
     "isSingleResult" BOOLEAN
 ) AS
 $BODY$
+DECLARE
+	"@actorId" INTEGER;
+BEGIN
+    IF EXISTS (SELECT 1 FROM directory.identifier di WHERE di."identifier" = "@identifier" and di."identifierTypeCode" = "@identifierTypeCode") THEN
+        RAISE EXCEPTION 'directory.notUniqueCombinationIdentifierTypeCodeIdentifier';
+    END IF;
     WITH u as (
         INSERT INTO directory.user ("firstName", "lastName", "dob", "nationalId")
         VALUES ("@firstName", "@lastName", "@dob", "@nationalId")
@@ -36,14 +42,21 @@ $BODY$
         RETURNING *
     )
     SELECT
-        u."actorId",
+        u."actorId"
+    INTO
+        "@actorId"
+    FROM u;
+
+RETURN QUERY
+    SELECT
+        "@actorId" as "actorId",
         "@identifier" as "identifier",
         "@identifierTypeCode" as "identifierTypeCode",
-        u."firstName",
-        u."lastName",
-        u."dob",
-        u."nationalId",
-        true AS "isSingleResult"
-    FROM u
+        "@firstName" as "firstName",
+        "@lastName" as "lastName",
+        "@dob" as "dob",
+        "@nationalId" as "nationalId",
+        true AS "isSingleResult";
+END;
 $BODY$
-LANGUAGE SQL
+LANGUAGE plpgsql;
