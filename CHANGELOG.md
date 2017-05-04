@@ -1,3 +1,13 @@
+<a name="0.7.6"></a>
+## [0.7.6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.5...v0.7.6) (2017-05-04)
+
+
+### Bug Fixes
+
+* add custom error when you try to register user with not unique identifier and identifierTypeCode ([953d9d0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/953d9d0))
+
+
+
 <a name="0.7.5"></a>
 ## [0.7.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.4...v0.7.5) (2017-04-21)
 
