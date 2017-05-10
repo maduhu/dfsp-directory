@@ -1,3 +1,13 @@
+<a name="0.7.8"></a>
+## [0.7.8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.7...v0.7.8) (2017-05-10)
+
+
+### Bug Fixes
+
+* change logmode to long ([13276bf](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/13276bf))
+
+
+
 <a name="0.7.7"></a>
 ## [0.7.7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.6...v0.7.7) (2017-05-10)
 
