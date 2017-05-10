@@ -1,3 +1,13 @@
+<a name="0.7.7"></a>
+## [0.7.7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.6...v0.7.7) (2017-05-10)
+
+
+### Bug Fixes
+
+* remove colors from stdout by default ([0bb4a30](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/0bb4a30))
+
+
+
 <a name="0.7.6"></a>
 ## [0.7.6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.5...v0.7.6) (2017-05-04)
 
