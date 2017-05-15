@@ -1,3 +1,13 @@
+<a name="0.7.9"></a>
+## [0.7.9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.8...v0.7.9) (2017-05-15)
+
+
+### Bug Fixes
+
+* elk ([b436479](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/b436479))
+
+
+
 <a name="0.7.8"></a>
 ## [0.7.8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.7...v0.7.8) (2017-05-10)
 
