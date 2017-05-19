@@ -1,3 +1,13 @@
+<a name="0.7.10"></a>
+## [0.7.10](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.9...v0.7.10) (2017-05-19)
+
+
+### Bug Fixes
+
+* circle.yml ([850cc0b](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/850cc0b))
+
+
+
 <a name="0.7.9"></a>
 ## [0.7.9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.8...v0.7.9) (2017-05-15)
 
