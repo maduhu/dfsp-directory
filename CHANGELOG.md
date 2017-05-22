@@ -1,3 +1,13 @@
+<a name="0.7.11"></a>
+## [0.7.11](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.10...v0.7.11) (2017-05-22)
+
+
+### Bug Fixes
+
+* log configuration ([83167d9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/83167d9))
+
+
+
 <a name="0.7.10"></a>
 ## [0.7.10](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.9...v0.7.10) (2017-05-19)
 
