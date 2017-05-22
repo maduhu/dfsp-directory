@@ -14,7 +14,10 @@
       {
         "level": "debug",
         "stream": "ut-log-dfsp",
-        "streamConfig": {}
+        "streamConfig": {
+          "skip": [],
+          "metrics": {}
+        }
       },
       {
         "level": "trace",
