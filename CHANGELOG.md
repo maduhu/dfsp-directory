@@ -1,3 +1,13 @@
+<a name="0.7.12"></a>
+## [0.7.12](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.11...v0.7.12) (2017-05-26)
+
+
+### Bug Fixes
+
+* update pipeline ([8816c19](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/8816c19))
+
+
+
 <a name="0.7.11"></a>
 ## [0.7.11](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.10...v0.7.11) (2017-05-22)
 
