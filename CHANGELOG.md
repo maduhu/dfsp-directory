@@ -1,3 +1,13 @@
+<a name="0.7.13"></a>
+## [0.7.13](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.12...v0.7.13) (2017-06-01)
+
+
+### Bug Fixes
+
+* cast dob to varchar ([c5e165f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/c5e165f))
+
+
+
 <a name="0.7.12"></a>
 ## [0.7.12](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.11...v0.7.12) (2017-05-26)
 
