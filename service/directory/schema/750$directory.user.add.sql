@@ -12,7 +12,7 @@ RETURNS TABLE(
     "identifierTypeCode" VARCHAR(3),
     "firstName" VARCHAR(255),
     "lastName" VARCHAR(255),
-    "dob" DATE,
+    "dob" VARCHAR,
     "nationalId" VARCHAR(255),
     "isSingleResult" BOOLEAN
 ) AS
@@ -54,7 +54,7 @@ RETURN QUERY
         "@identifierTypeCode" as "identifierTypeCode",
         "@firstName" as "firstName",
         "@lastName" as "lastName",
-        "@dob" as "dob",
+        CAST("@dob" as VARCHAR) as "dob",
         "@nationalId" as "nationalId",
         true AS "isSingleResult";
 END;

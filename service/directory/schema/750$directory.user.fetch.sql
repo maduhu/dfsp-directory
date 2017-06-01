@@ -5,7 +5,7 @@ RETURNS TABLE(
     "firstName" varchar(255),
     "lastName" varchar(255),
     "actorId" int,
-    "dob" date,
+    "dob" VARCHAR,
     "nationalId" varchar(255),
     "identifiers" json
 ) AS
@@ -14,7 +14,7 @@ $BODY$
         u."firstName",
         u."lastName",
         u."actorId",
-        u."dob",
+        CAST (u."dob" as VARCHAR),
         u."nationalId",
         (
             SELECT array_to_json(array_agg(identifiers))
