@@ -1,3 +1,13 @@
+<a name="0.7.14"></a>
+## [0.7.14](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.13...v0.7.14) (2017-06-12)
+
+
+### Bug Fixes
+
+* update dependencies ([d1e17af](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/d1e17af))
+
+
+
 <a name="0.7.13"></a>
 ## [0.7.13](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.12...v0.7.13) (2017-06-01)
 
