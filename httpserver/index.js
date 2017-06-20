@@ -6,11 +6,6 @@ module.exports = {
   api: ['directory'],
   imports: ['directory.start'],
   port: 8011,
-  allowXFF: true,
-  disableXsrf: {
-    http: true,
-    ws: true
-  },
   bundle: 'directory',
   dist: path.resolve(__dirname, '../dist'),
   routes: {

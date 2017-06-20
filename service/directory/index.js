@@ -45,7 +45,7 @@ module.exports = {
   },
   'user.get.response.receive': function (msg, $meta) {
     if (Array.isArray(msg) && !msg.length) {
-      return Promise.reject(error.userNotFound())
+      throw error.userNotFound()
     }
     return msg
   }
