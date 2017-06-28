@@ -1,3 +1,13 @@
+<a name="0.7.18"></a>
+## [0.7.18](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.17...v0.7.18) (2017-06-28)
+
+
+### Bug Fixes
+
+* ut-bus version ([0175b86](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/0175b86))
+
+
+
 <a name="0.7.17"></a>
 ## [0.7.17](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.16...v0.7.17) (2017-06-28)
 
