@@ -1,3 +1,13 @@
+<a name="0.7.17"></a>
+## [0.7.17](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.16...v0.7.17) (2017-06-28)
+
+
+### Bug Fixes
+
+* update ut-bus and ut-port-httpserver ([3467abd](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/3467abd))
+
+
+
 <a name="0.7.16"></a>
 ## [0.7.16](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.15...v0.7.16) (2017-06-20)
 
