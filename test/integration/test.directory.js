@@ -366,6 +366,18 @@ test({
             'no user removed successfully'
           )
         }
+      },
+      {
+        name: 'Get unregistered user',
+        method: 'directory.user.get',
+        params: (context) => {
+          return {
+            actorId: 544644
+          }
+        },
+        error: (error, assert) => {
+          assert.equals(error.errorPrint, 'User not found', 'Check error message')
+        }
       }
     ])
   }

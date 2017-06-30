@@ -5,9 +5,6 @@ var UserNotFound = create('UserNotFound', RPC)
 var defaultErrorCode = 400
 
 module.exports = {
-  directory: function (cause) {
-    return new RPC(cause)
-  },
   userNotFound: function (params) {
     return new UserNotFound({
       message: 'User not found',
