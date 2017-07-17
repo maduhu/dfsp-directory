@@ -1,3 +1,13 @@
+<a name="0.7.19"></a>
+## [0.7.19](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.18...v0.7.19) (2017-07-17)
+
+
+### Bug Fixes
+
+* refactor error hangling ([f8444df](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/f8444df))
+
+
+
 <a name="0.7.18"></a>
 ## [0.7.18](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.17...v0.7.18) (2017-06-28)
 
