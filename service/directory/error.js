@@ -1,20 +1,17 @@
 var create = require('ut-error').define
 
-var RPC = create('Directory')
-var UserNotFound = create('UserNotFound', RPC)
+var UserNotFound = create('UserNotFound')
 var defaultErrorCode = 400
 
-module.exports = {
-  directory: function (cause) {
-    return new RPC(cause)
-  },
+module.exports = Object.assign({
   userNotFound: function (params) {
     return new UserNotFound({
       message: 'User not found',
       params: params
     })
-  },
-  error: [
+  }
+},
+  [
     {
       type: 'directory',
       message: 'directory error'
@@ -41,5 +38,4 @@ module.exports = {
       })
     }
     return exporting
-  }, {})
-}
+  }, {}))

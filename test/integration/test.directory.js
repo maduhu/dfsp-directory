@@ -366,6 +366,36 @@ test({
             'no user removed successfully'
           )
         }
+      },
+      {
+        name: 'Get user with invalid identifier type',
+        method: 'directory.user.get',
+        params: (context) => {
+          return {
+            actorId: 999999999,
+            identifierTypeCode: 'eur'
+          }
+        },
+        error: (result, assert) => {
+          assert.equals(
+            result.errorPrint,
+            'User not found',
+            'Try to get user by not existing actorId'
+          )
+        }
+      },
+      {
+        name: 'Add user #2',
+        method: 'directory.user.add',
+        params: (context) => {
+          return {
+            identifier: IDENTIFIER_2,
+            identifierTypeCode: 'phn'
+          }
+        },
+        error: (error, assert) => {
+          assert.equals(error.errorPrint, 'There is already registered user with this identifier!', 'Check that we can not add user with not unique identifier and identifierTypeCode')
+        }
       }
     ])
   }

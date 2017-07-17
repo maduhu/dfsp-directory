@@ -48,5 +48,8 @@ module.exports = {
       return Promise.reject(error.userNotFound())
     }
     return msg
+  },
+  'user.add.error.receive': function (msg) {
+    throw error['directory.notUniqueCombinationIdentifierTypeCodeIdentifier']()
   }
 }
