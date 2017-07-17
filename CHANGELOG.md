@@ -1,3 +1,13 @@
+<a name="0.7.20"></a>
+## [0.7.20](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.19...v0.7.20) (2017-07-17)
+
+
+### Bug Fixes
+
+* add test for sql inspect - negative case ([5efb243](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/5efb243))
+
+
+
 <a name="0.7.19"></a>
 ## [0.7.19](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.18...v0.7.19) (2017-07-17)
 
