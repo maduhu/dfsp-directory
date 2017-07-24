@@ -1,3 +1,13 @@
+<a name="0.7.22"></a>
+## [0.7.22](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.21...v0.7.22) (2017-07-24)
+
+
+### Bug Fixes
+
+* remove overwriting of error ([f471608](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/f471608))
+
+
+
 <a name="0.7.21"></a>
 ## [0.7.21](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.20...v0.7.21) (2017-07-24)
 
