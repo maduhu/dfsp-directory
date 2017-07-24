@@ -1,3 +1,13 @@
+<a name="0.7.21"></a>
+## [0.7.21](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.20...v0.7.21) (2017-07-24)
+
+
+### Bug Fixes
+
+* Add readme file ([8f47d01](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/8f47d01))
+
+
+
 <a name="0.7.20"></a>
 ## [0.7.20](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.19...v0.7.20) (2017-07-17)
 
