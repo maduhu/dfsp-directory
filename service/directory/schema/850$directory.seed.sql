@@ -5,7 +5,7 @@ BEGIN
         directory."identifierType" ("code", "name", "description")
     VALUES
         ('eur', 'User number', 'User number'),
-        ('phn', 'Phone number', 'Phone number')
+        ('tel', 'Phone number', 'Phone number')
     ON CONFLICT ("code") DO UPDATE SET "name" = EXCLUDED.name, "description" = EXCLUDED.description;
 
     IF NOT EXISTS (SELECT 1 FROM directory.identifier WHERE "identifier" = '00359######') THEN

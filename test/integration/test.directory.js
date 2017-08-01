@@ -28,7 +28,7 @@ test({
         params: (context) => {
           return {
             identifier: IDENTIFIER_1,
-            identifierTypeCode: 'phn',
+            identifierTypeCode: 'tel',
             firstName: FIRST_NAME_1,
             lastName: LAST_NAME_1,
             dob: '1972/01/02',
@@ -39,7 +39,7 @@ test({
           assert.equals(joi.validate(result, {
             actorId: joi.number().required(),
             identifier: joi.string().valid(IDENTIFIER_1).required(),
-            identifierTypeCode: joi.string().valid('phn').required(),
+            identifierTypeCode: joi.string().valid('tel').required(),
             firstName: joi.string().valid(FIRST_NAME_1).required(),
             lastName: joi.string().valid(LAST_NAME_1).required(),
             dob: joi.date().required(),
@@ -53,7 +53,7 @@ test({
         params: (context) => {
           return {
             identifier: IDENTIFIER_2,
-            identifierTypeCode: 'phn',
+            identifierTypeCode: 'tel',
             firstName: FIRST_NAME_2,
             lastName: LAST_NAME_2,
             dob: '1972/01/02',
@@ -64,7 +64,7 @@ test({
           assert.equals(joi.validate(result, {
             actorId: joi.number().required(),
             identifier: joi.string().valid(IDENTIFIER_2).required(),
-            identifierTypeCode: joi.string().valid('phn').required(),
+            identifierTypeCode: joi.string().valid('tel').required(),
             firstName: joi.string().valid(FIRST_NAME_2).required(),
             lastName: joi.string().valid(LAST_NAME_2).required(),
             dob: joi.date().required(),
@@ -86,7 +86,7 @@ test({
               actorId: joi.number().required(),
               identifiers: joi.array().items({
                 identifier: IDENTIFIER_1,
-                identifierTypeCode: 'phn'
+                identifierTypeCode: 'tel'
               }).length(1).required(),
               firstName: joi.string().valid(FIRST_NAME_1).required(),
               lastName: joi.string().valid(LAST_NAME_1).required(),
@@ -112,7 +112,7 @@ test({
               actorId: joi.number().required(),
               identifiers: joi.array().items({
                 identifier: IDENTIFIER_1,
-                identifierTypeCode: 'phn'
+                identifierTypeCode: 'tel'
               }).length(1).required(),
               firstName: joi.string().valid(FIRST_NAME_1).required(),
               lastName: joi.string().valid(LAST_NAME_1).required(),
@@ -123,7 +123,7 @@ test({
                 actorId: joi.number().required(),
                 identifiers: joi.array().items({
                   identifier: IDENTIFIER_2,
-                  identifierTypeCode: 'phn'
+                  identifierTypeCode: 'tel'
                 }).length(1).required(),
                 firstName: joi.string().valid(FIRST_NAME_2).required(),
                 lastName: joi.string().valid(LAST_NAME_2).required(),
@@ -161,7 +161,7 @@ test({
               actorId: joi.number().required(),
               identifiers: joi.array().items({
                 identifier: IDENTIFIER_1,
-                identifierTypeCode: 'phn'
+                identifierTypeCode: 'tel'
               }).length(1).required(),
               firstName: joi.string().valid(FIRST_NAME_1).required(),
               lastName: joi.string().valid(LAST_NAME_1).required(),
@@ -188,7 +188,7 @@ test({
               actorId: joi.number().required(),
               identifiers: joi.array().items({
                 identifier: IDENTIFIER_1,
-                identifierTypeCode: 'phn'
+                identifierTypeCode: 'tel'
               }).length(1).required(),
               firstName: joi.string().valid(FIRST_NAME_1).required(),
               lastName: joi.string().valid(LAST_NAME_1).required(),
@@ -207,7 +207,7 @@ test({
           return {
             actorId: context['Add user #1'].actorId,
             identifier: IDENTIFIER_1,
-            identifierTypeCode: 'phn'
+            identifierTypeCode: 'tel'
           }
         },
         result: (result, assert) => {
@@ -216,7 +216,7 @@ test({
               actorId: joi.number().required(),
               identifiers: joi.array().items({
                 identifier: IDENTIFIER_1,
-                identifierTypeCode: 'phn'
+                identifierTypeCode: 'tel'
               }).length(1).required(),
               firstName: joi.string().valid(FIRST_NAME_1).required(),
               lastName: joi.string().valid(LAST_NAME_1).required(),
@@ -234,7 +234,7 @@ test({
         params: (context) => {
           return {
             actorId: context['Add user #1'].actorId,
-            identifierTypeCode: 'phn'
+            identifierTypeCode: 'tel'
           }
         },
         result: (result, assert) => {
@@ -243,7 +243,7 @@ test({
               actorId: joi.number().required(),
               identifiers: joi.array().items({
                 identifier: IDENTIFIER_1,
-                identifierTypeCode: 'phn'
+                identifierTypeCode: 'tel'
               }).length(1).required(),
               firstName: joi.string().valid(FIRST_NAME_1).required(),
               lastName: joi.string().valid(LAST_NAME_1).required(),
@@ -261,7 +261,7 @@ test({
         params: (context) => {
           return {
             identifier: IDENTIFIER_1,
-            identifierTypeCode: 'phn'
+            identifierTypeCode: 'tel'
           }
         },
         result: (result, assert) => {
@@ -270,7 +270,7 @@ test({
               actorId: joi.number().required(),
               identifiers: joi.array().items({
                 identifier: IDENTIFIER_1,
-                identifierTypeCode: 'phn'
+                identifierTypeCode: 'tel'
               }).length(1).required(),
               firstName: joi.string().valid(FIRST_NAME_1).required(),
               lastName: joi.string().valid(LAST_NAME_1).required(),
@@ -287,7 +287,7 @@ test({
         method: 'directory.user.get',
         params: (context) => {
           return {
-            identifierTypeCode: 'phn'
+            identifierTypeCode: 'tel'
           }
         },
         error: (result, assert) => {
@@ -329,7 +329,7 @@ test({
               actorId: this['Add user #1'].actorId,
               identifiers: joi.array().items({
                 identifier: IDENTIFIER_1,
-                identifierTypeCode: 'phn'
+                identifierTypeCode: 'tel'
               }).length(1).required()
             }).error,
             null,
@@ -390,7 +390,7 @@ test({
         params: (context) => {
           return {
             identifier: IDENTIFIER_2,
-            identifierTypeCode: 'phn'
+            identifierTypeCode: 'tel'
           }
         },
         error: (error, assert) => {
