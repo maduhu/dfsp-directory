@@ -1,3 +1,13 @@
+<a name="0.7.23"></a>
+## [0.7.23](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.22...v0.7.23) (2017-08-03)
+
+
+### Bug Fixes
+
+* msisdn identifier type code is 'tel', not 'phn' ([cdbe5b4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/cdbe5b4))
+
+
+
 <a name="0.7.22"></a>
 ## [0.7.22](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.21...v0.7.22) (2017-07-24)
 

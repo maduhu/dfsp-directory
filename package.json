@@ -1,6 +1,6 @@
 {
   "name": "@leveloneproject/dfsp-directory",
-  "version": "0.7.22",
+  "version": "0.7.23",
   "description": "DFSP directory service",
   "main": "index.js",
   "scripts": {
