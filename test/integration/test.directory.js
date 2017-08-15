@@ -48,6 +48,27 @@ test({
         }
       },
       {
+        name: 'Try to add user #1 - again',
+        method: 'directory.user.add',
+        params: (context) => {
+          return {
+            identifier: IDENTIFIER_1,
+            identifierTypeCode: 'tel',
+            firstName: FIRST_NAME_1,
+            lastName: LAST_NAME_1,
+            dob: '1972/01/02',
+            nationalId: NATIONAL_ID_1
+          }
+        },
+        error: (error, assert) => {
+          assert.equals(
+            error.errorPrint,
+            'There is already registered user with this identifier!',
+            'Check the error message for adding already registered user'
+          )
+        }
+      },
+      {
         name: 'Add user #2',
         method: 'directory.user.add',
         params: (context) => {
@@ -290,10 +311,10 @@ test({
             identifierTypeCode: 'tel'
           }
         },
-        error: (result, assert) => {
+        error: (error, assert) => {
           assert.equals(
-            result.errorPrint,
-            'directory.missingArguments',
+            error.errorPrint,
+            'You must provide either actorId or identifier',
             'get without actorId and identifier throws'
           )
         }
@@ -307,9 +328,9 @@ test({
             identifierTypeCode: 'xxx'
           }
         },
-        error: (result, assert) => {
+        error: (error, assert) => {
           assert.equals(
-            result.errorPrint,
+            error.errorPrint,
             'directory.identifierTypeCodeNotFound',
             'get invalid identifier type throws'
           )
@@ -376,9 +397,9 @@ test({
             identifierTypeCode: 'eur'
           }
         },
-        error: (result, assert) => {
+        error: (error, assert) => {
           assert.equals(
-            result.errorPrint,
+            error.errorPrint,
             'User not found',
             'Try to get user by not existing actorId'
           )
@@ -395,6 +416,16 @@ test({
         },
         error: (error, assert) => {
           assert.equals(error.errorPrint, 'There is already registered user with this identifier!', 'Check that we can not add user with not unique identifier and identifierTypeCode')
+        }
+      },
+      {
+        name: 'Get unregistered user',
+        method: 'directory.user.get',
+        params: {
+          actorId: 544644
+        },
+        error: (error, assert) => {
+          assert.equals(error.errorPrint, 'User not found', 'Check error message')
         }
       }
     ])

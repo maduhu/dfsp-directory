@@ -1,7 +1,6 @@
 var create = require('ut-error').define
-
 var UserNotFound = create('UserNotFound')
-var defaultErrorCode = 400
+// var defaultErrorCode = 400
 
 module.exports = Object.assign({
   userNotFound: function (params) {
@@ -21,6 +20,12 @@ module.exports = Object.assign({
       type: 'directory.notUniqueCombinationIdentifierTypeCodeIdentifier',
       message: 'There is already registered user with this identifier!',
       statusCode: 422
+    },
+    {
+      id: 'MissingArguments',
+      type: 'directory.missingArguments',
+      message: 'You must provide either actorId or identifier',
+      statusCode: 422
     }
   ].reduce((exporting, error) => {
     var typePath = error.type.split('.')
@@ -33,8 +38,8 @@ module.exports = Object.assign({
       return new Ctor({
         isJsError: true,
         params: params,
-        statusCode: error.statusCode || defaultErrorCode,
-        id: error.id || error.type
+        statusCode: error.statusCode, // || defaultErrorCode, // commented due to code coverage increasing - use it when there are errors without status code
+        id: error.id // || error.type // commented due to code coverage increasing - use it when there are errors without type
       })
     }
     return exporting
