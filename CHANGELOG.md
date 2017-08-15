@@ -1,3 +1,13 @@
+<a name="0.7.25"></a>
+## [0.7.25](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.24...v0.7.25) (2017-08-15)
+
+
+### Bug Fixes
+
+* remove index_test file ([3cb3bbd](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/3cb3bbd))
+
+
+
 <a name="0.7.24"></a>
 ## [0.7.24](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.23...v0.7.24) (2017-08-15)
 
