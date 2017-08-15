@@ -1,3 +1,13 @@
+<a name="0.7.24"></a>
+## [0.7.24](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.23...v0.7.24) (2017-08-15)
+
+
+### Bug Fixes
+
+* improve code coverage ([aa31628](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/aa31628))
+
+
+
 <a name="0.7.23"></a>
 ## [0.7.23](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.22...v0.7.23) (2017-08-03)
 
