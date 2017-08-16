@@ -50,6 +50,9 @@ module.exports = {
     return msg
   },
   'user.add.error.receive': function (msg) {
-    throw error['directory.notUniqueCombinationIdentifierTypeCodeIdentifier']()
+    if (msg.type && error[msg.type]) {
+      throw error[msg.type]()
+    }
+    return msg
   }
 }
