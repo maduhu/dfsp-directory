@@ -1,3 +1,13 @@
+<a name="0.7.26"></a>
+## [0.7.26](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.25...v0.7.26) (2017-08-16)
+
+
+### Bug Fixes
+
+* throw error if defined, else return the error we've got ([bd9f95c](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/commit/bd9f95c))
+
+
+
 <a name="0.7.25"></a>
 ## [0.7.25](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-directory/compare/v0.7.24...v0.7.25) (2017-08-15)
 
